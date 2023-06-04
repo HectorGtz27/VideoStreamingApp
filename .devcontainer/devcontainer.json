@@ -6,7 +6,8 @@
 				"ms-vscode.cpptools",
 				"analytic-signal.preview-pdf",
 				"GitHub.copilot",
-				"MS-vsliveshare.vsliveshare"
+				"MS-vsliveshare.vsliveshare",
+				"hediet.vscode-drawio"
 			]
 		}
 	}

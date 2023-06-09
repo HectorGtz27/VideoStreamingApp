@@ -62,6 +62,12 @@ Para más información consulta el [MarketPlace](https://marketplace.visualstudi
 
 Revisa [LiveShare](https://youtu.be/9QXwSg9-2qQ). Revisa el [uso de LiveShare](https://www.youtube.com/watch?v=nj535VbE9pQ). Disponible para este repositorio.
 
+# Trabajo en Equipo - Avanzado
+
+Puedes trabajar en equipo siguiendo el workflow de GitHub basado en Pull Request. Esta es una forma avanzada de trabajo en equipo que puedes revisar en el siguiente [Video](https://www.youtube.com/watch?v=Zqft6yNRuNs). Para hacerlo considera lo siguiente: (1) En lugar de hacer un ```Fork``` del repositorio al que quieres contribuir a tu perfil personal, hazlo a la organización y (2) En lugar de clonar el repositorio ```Fork``` -como indica el video- crea un Codespace sobre el mismo y programa ahí tu contribución.
+
+** Nota: los repositorios ```Fork``` de los miembros que trabajen así aparecerán en la pestaña ```Repositories``` del mismo.
+
 # Ejecución de la App
 
 ### Compile+Run commands

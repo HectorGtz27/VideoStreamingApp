@@ -49,7 +49,45 @@ Construye aquí el Diagrama de Clases de tu solución, usando el [Lenguaje Merma
 
 ```mermaid
 classDiagram
-      class VideoStreamingApp
+      class Video
+      Video <|-- Pelicula
+      Video <|-- Serie
+      Serie --> Temporada
+      Temporada --> Episodio
+
+
+      Video: - id int 
+      Video: - nombre string
+      Video: - duracion float
+      Video: - genero string
+      Video: - calificacion float 
+      Video: - ifstream fi{"input"}
+      Video: - ofstream fo{"output"}
+
+      Video: + Video()
+      Video: + Video(id int, nombre string, duracion float, genero string, calificacion float )
+      Video: + mostrarVideo(nombre string, id int) void
+      Video: + setCalificacion(nombre string, califiacion float) void
+      Video: + outMsg(string)
+      Video: + start()
+
+      Pelicula: + Pelicula()
+      Pelicula: + Pelicula(id int, nombre string, duracion float, genero string, calificacion float)
+      Pelicula: + mostrarPelicula(id int, nombre string)
+
+      Serie: + Serie()
+      Serie: + Serie(id int, nombre string, duracion float, genero string, calificacion float)
+
+      Temporada: - numero int
+      Temporada: + Temporada()
+      Temporada: + Temporada(numero int)
+
+      Episodio: - titulo string
+      Episodio: - calificacionEpisodio float
+      Episodio: + Episodio()
+      Episodio: + Episodio(titulo string)
+      Episodio: + mostrarEpisodio(titulo string )
+
 ```
 Puedes apoyarte con el editor [Mermaid-live](https://mermaid.live/).
 

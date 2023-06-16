@@ -7,29 +7,26 @@
 
 Episodio ::Episodio() : Video(){
         // Constructor por defecto
-        this->idEpisodio = 0;
+        this->idEpisodio = "";
         this->nombre = "";
-        this->duracion = 0;
+        this->duracion = "";
         this->genero = "";
-        this->calificacion = 0;
 }
 
 //Hazme un constructor por parámetros
-Episodio::Episodio(int idEpisodio, std::string nombre, float duracion, std::string genero, float calificacion) : Video(idEpisodio, nombre, duracion, genero, calificacion){
+Episodio::Episodio( std::string idEpisodio, std::string nombre,  std::string duracion, std::string genero,  std::vector<float> calificaciones) : Video(idEpisodio, nombre, duracion, genero, calificaciones){
         this->idEpisodio = idEpisodio;
         this->nombre = nombre;
         this->duracion = duracion;
         this->genero = genero;
-        this->calificacion = calificacion;
+        this->calificaciones = calificaciones;
 }
 
-//creame mostrarCalificaciones
-std::string Episodio::mostrarCalificaciones(){
-        std::string calificaciones = "";
-        for (int i = 0; i < this->calificaciones.size(); i++){
-                calificaciones += std::to_string(this->calificaciones[i]) + "\n";
-        }
-        return calificaciones;
+void Episodio::Print(){
+        std::cout << "Episodio: " << this->idEpisodio << std::endl;
+        std::cout << "Nombre: " << this->nombre << std::endl;
+        std::cout << "Duracion: " << this->duracion << " min" << std::endl;
+        std::cout << "Genero: " << this->genero << std::endl;
 }
 
 Episodio::~Episodio(){

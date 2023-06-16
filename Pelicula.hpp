@@ -4,12 +4,12 @@
 
 class Pelicula : public Video {
     private:
-        int idPelicula;
+         std::string idPelicula;
     public:
         Pelicula();
-        Pelicula(int idPelicula, std::string nombre, float duracion, std::string genero, float calificacion);
+        Pelicula( std::string idPelicula, std::string nombre,  std::string duracion, std::string genero,  std::vector<float> calificaciones);
         virtual ~Pelicula();
-        std::string mostrarCalificaciones() override;
+        void Print() override;
 
 
 };

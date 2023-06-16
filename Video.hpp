@@ -6,27 +6,22 @@
 
 class Video {
 protected:
-    int id;
+    std::string id;
     std::string nombre;
-    float duracion;
+    std::string duracion;
     std::string genero;
-    float calificacion;
     std::vector<float> calificaciones;
-    
-    // Ahorita nos preocupamos por el archivo
-    std::ifstream fi{"input"};
-    std::ofstream fo{"output"};
 
 public:
     Video();
-    Video(int id, std::string nombre, float duracion, std::string genero, float calificacion);
+    Video( std::string id, std::string nombre,  std::string duracion, std::string genero,  std::vector<float> calificaciones);
 
-    void setCalificacion(float calificacion);
-    float getCalificacion();
-    virtual std::string mostrarCalificaciones() = 0;
-    void print();
-    void outMsg(std::string);
-    void start();
+    void SetCalificacion(float calificacion);
+    float GetCalificacion();
+    void MostrarCalificaciones();
+    virtual void Print() = 0;
+
+   
 
 };
 

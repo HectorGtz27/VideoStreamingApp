@@ -51,46 +51,45 @@ Construye aquí el Diagrama de Clases de tu solución, usando el [Lenguaje Merma
 classDiagram
       class Video
       Video <|-- Pelicula
-      Video <|-- Serie
       Serie --> Temporada
       Video <|-- Episodio
       Temporada --> Episodio
 
-      Video: - id int 
-      Video: - nombre string
-      Video: - duracion float
-      Video: - genero string
-      Video: - calificacion float
-      Video: - calificaciones vector<float> 
-      Video: - ifstream fi{"input"}
-      Video: - ofstream fo{"output"}
+      Video: # id int 
+      Video: # nombre string
+      Video: # duracion float
+      Video: # genero string
+      Video: # calificaciones vector<float> 
 
       Video: + Video()
-      Video: + Video(id int, nombre string, duracion float, genero string, calificacion float )
+      Video: + Video(id int, nombre string, duracion float, genero string, vector<float> calificaciones)
+    
+      Video: + void setCalificacion(float calificacion) 
+      Video: + float getCalificacion() 
+      Video: + void mostrarCalificaciones() 
+      Video: + void Print() = 0 virtual 
 
-      Video: + setCalificacion(Video v, califiacion float) void
-      Video: + getPromedioCalifiaciones(calificaciones vector<float> ) float
-      
-
-      Video: + mostrarVideo(Video v) void
-      Video: + outMsg(string)
-      Video: + start()
-
+      Pelicula: - string idPelicula
       Pelicula: + Pelicula()
-      Pelicula: + Pelicula(id int, nombre string, duracion float, genero string, calificacion float)
-      Pelicula: + mostrarPelicula(Pelicula p)
+      Pelicula: + Pelicula(string idPelicula, string nombre, string duracion, string genero, vector<float> calificaciones)
+      Pelicula: + virtual ~Pelicula()
+      Pelicula: + void Print() override    
      
+      Serie: - int id 
       Serie: + Serie()
-      Serie: + Serie(id int, nombre string, duracion float, genero string, calificacion float)
+      Serie: + Serie(id int, string)
+      Serie: + vector<Temporada> Temporada
+      Serie: + string nombre
 
       Temporada: - numero int
       Temporada: + Temporada()
-      Temporada: + Temporada(numero int)
+      Temporada: + vector<Episodio> Episodios
 
+      Episodio: - string idEpisodio
       Episodio: + Episodio()
-      Episodio: + Episodio(titulo string)
-      Episodio: + mostrarEpisodio(Episodio e)
-
+      Episodio: + Episodio(idEpisodio string)
+      Episodio: + virtual ~Episodio()
+      Episodio: + void Print() override
 ```
 Puedes apoyarte con el editor [Mermaid-live](https://mermaid.live/).
 

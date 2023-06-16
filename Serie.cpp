@@ -2,7 +2,7 @@
 # include <iostream>
 # include <string>
 # include "Serie.hpp"
-
+# include "Temporada.hpp"
 //hazme un constructor por defecto
 Serie::Serie(){
 		this->id = 0;

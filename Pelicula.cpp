@@ -8,29 +8,27 @@
 
 Pelicula::Pelicula() : Video(){
         // Constructor por defecto
-        this->idPelicula = 0;
+        this->idPelicula = "";
         this->nombre = "";
-        this->duracion = 0;
+        this->duracion = "";
         this->genero = "";
-        this->calificacion = 0;
 }
 
 //Hazme un constructor por parámetros
-Pelicula::Pelicula(int idPelicula, std::string nombre, float duracion, std::string genero, float calificacion) : Video(idPelicula, nombre, duracion, genero, calificacion){
+Pelicula::Pelicula(std::string idPelicula, std::string nombre,  std::string duracion, std::string genero,  std::vector<float> calificaciones) : Video(idPelicula, nombre, duracion, genero, calificaciones){
         this->idPelicula = idPelicula;
         this->nombre = nombre;
         this->duracion = duracion;
         this->genero = genero;
-        this->calificacion = calificacion;
+        this->calificaciones = calificaciones;
 }
 
-//creame mostrarCalificaciones
-std::string Pelicula::mostrarCalificaciones(){
-        std::string calificaciones = "";
-        for (int i = 0; i < this->calificaciones.size(); i++){
-                calificaciones += std::to_string(this->calificaciones[i]) + "\n";
-        }
-        return calificaciones;
+
+void Pelicula::Print(){
+        std::cout << "Pelicula: " << this->idPelicula << std::endl;
+        std::cout << "Nombre: " << this->nombre << std::endl;
+        std::cout << "Duracion: " << this->duracion << " min" << std::endl;
+        std::cout << "Genero: " << this->genero << std::endl;
 }
     
 Pelicula::~Pelicula(){

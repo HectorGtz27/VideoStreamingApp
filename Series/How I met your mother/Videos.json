@@ -1,0 +1,173 @@
+{
+    "Series": [
+      {
+        "Id": "12334",
+        "Nombre": "How I Met your mother",
+        "Temporadas": [
+          {
+            "Episodios": [
+              {
+                "Nombre": "Pilot HMYM",
+                "Id": "2345",
+                "Genero": "Comedia",
+                "Duracion": "45",
+                "Calificacion": [
+                  5,
+                  5,
+                  5,
+                  4,
+                  5
+                ]
+              },
+              {
+                "Nombre": "Episode 2",
+                "Id": "3456",
+                "Genero": "Comedia",
+                "Duracion": "47",
+                "Calificacion": [
+                  4,
+                  4,
+                  4,
+                  4,
+                  4
+                ]
+              },
+              {
+                "Nombre": "Episode 3",
+                "Id": "8324",
+                "Genero": "Comedia",
+                "Duracion": "55",
+                "Calificacion": [
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ]
+              }
+            ]
+          },
+          {
+            "Episodios": [
+              {
+                "Nombre": "Episode 21",
+                "Id": "2345",
+                "Genero": "Comedia",
+                "Duracion": "45",
+                "Calificacion": [
+                  5,
+                  5,
+                  5,
+                  4,
+                  5
+                ]
+              },
+              {
+                "Nombre": "Episode 22",
+                "Id": "75432",
+                "Genero": "Comedia",
+                "Duracion": "47",
+                "Calificacion": [
+                  4,
+                  4,
+                  4,
+                  4,
+                  4
+                ]
+              },
+              {
+                "Nombre": "Episode 23",
+                "Id": "32456",
+                "Genero": "Romantico",
+                "Duracion": "55",
+                "Calificacion": [
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Id": "23423",
+        "Nombre": "Friends",
+        "Temporadas": [
+          {
+            "Episodios": [
+              {
+                "Nombre": "Pilot Friends",
+                "Id": "9324",
+                "Genero": "Comedia",
+                "Duracion": "45",
+                "Calificacion": [
+                  5,
+                  5,
+                  5,
+                  4,
+                  5
+                ]
+              },
+              {
+                "Nombre": "Episode 2 Friends",
+                "Id": "2341",
+                "Genero": "Comedia",
+                "Duracion": "47",
+                "Calificacion": [
+                  4,
+                  4,
+                  4,
+                  4,
+                  4
+                ]
+              },
+              {
+                "Nombre": "Episode 3 Friends",
+                "Id": "23480",
+                "Genero": "Comedia",
+                "Duracion": "55",
+                "Calificacion": [
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Peliculas": [
+      {
+        "Nombre": "Duro de Matar",
+        "Id": "0001",
+        "Genero": "Accion",
+        "Duracion": "150",
+        "Calificacion": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "Nombre": "Duro de Matar 2",
+        "Id": "9347",
+        "Genero": "Accion",
+        "Duracion": "140",
+        "Calificacion": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      }
+    ]
+  }

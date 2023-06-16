@@ -215,7 +215,7 @@ int main()
             case 6:
                 std::cout << "Ha seleccionado la Opción 6." << std::endl;
                 // Código para la opción 1
-                std::cout << "Que video quieres calificar: "<<std::endl;
+                std::cout << "Que video quieres calificar: ";
                 std::cin.ignore(); // Ignorar el carácter de nueva línea pendiente
                 std::getline(std::cin, nombre);
                 // Iterate over each element in the vector

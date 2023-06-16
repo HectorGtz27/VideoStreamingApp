@@ -54,42 +54,53 @@ classDiagram
       Serie --> Temporada
       Video <|-- Episodio
       Temporada --> Episodio
+      <<Abstract>> Video
 
-      Video: # id int 
+      Video: # id string 
       Video: # nombre string
-      Video: # duracion float
+      Video: # duracion string 
       Video: # genero string
       Video: # calificaciones vector<float> 
-
       Video: + Video()
-      Video: + Video(id int, nombre string, duracion float, genero string, vector<float> calificaciones)
-    
-      Video: + void setCalificacion(float calificacion) 
-      Video: + float getCalificacion() 
-      Video: + void mostrarCalificaciones() 
+      Video: + Video( string id, string nombre,  string duracion, string genero,  vector<float> calificaciones)
+      Video: + void SetCalificacion(float calificacion) 
+      Video: + float GetCalificacion() 
+      Video: + void MostrarCalificaciones() 
       Video: + void Print() = 0 virtual 
+      Video: + string GetNombre()
+      Video: + string GetGenero()
+      Video: + friend ostream& operator<<(ostream& os, const Video& video)
+      
 
       Pelicula: - string idPelicula
       Pelicula: + Pelicula()
-      Pelicula: + Pelicula(string idPelicula, string nombre, string duracion, string genero, vector<float> calificaciones)
+      Pelicula: + Pelicula( string idPelicula, string nombre,  string duracion, string genero,  vector<float> calificaciones)
       Pelicula: + virtual ~Pelicula()
-      Pelicula: + void Print() override    
-     
-      Serie: - int id 
-      Serie: + Serie()
-      Serie: + Serie(id int, string)
-      Serie: + vector<Temporada> Temporada
-      Serie: + string nombre
-
-      Temporada: - numero int
-      Temporada: + Temporada()
-      Temporada: + vector<Episodio> Episodios
+      Pelicula: + void Print() override   
 
       Episodio: - string idEpisodio
       Episodio: + Episodio()
-      Episodio: + Episodio(idEpisodio string)
+      Episodio: +  Episodio( string idEpisodio, string nombre,  string duracion, string genero, vector<float> calificaciones)
       Episodio: + virtual ~Episodio()
-      Episodio: + void Print() override
+      Episodio: + void Print() override 
+     
+      Serie: - string id
+      Serie: - vector<Temporada*> Temporadas 
+      Serie: + Serie()
+      Serie: + Serie( string id, string)
+      Serie: + void AddTemporada(Temporada* temporada)
+      Serie: + vector<Temporada*> GetTemporadas()
+      Serie: + strimg nombre
+
+
+      Temporada: - string numero
+	Temporada: - vector<Episodio*> Episodios
+	Temporada: + Temporada()
+	Temporada: + Temporada(string numero)
+	Temporada: + void SetEpisodios(vector<Episodio*> episodios)
+	Temporada: + void SetEpisodio(Episodio* episodio)
+	Temporada: + vector<Episodio*> GetEpisodios()
+	Temporada: + string GetId()
 ```
 Puedes apoyarte con el editor [Mermaid-live](https://mermaid.live/).
 

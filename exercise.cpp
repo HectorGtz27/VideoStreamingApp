@@ -214,7 +214,7 @@ int main()
             case 6:
                 std::cout << "Ha seleccionado la Opción 6." << std::endl;
                 // Código para la opción 1
-                std::cout << "Que video quieres calificar: ";
+                std::cout << "Que video quieres calificar: "<<std::endl;
                 std::cin.ignore(); // Ignorar el carácter de nueva línea pendiente
                 std::getline(std::cin, nombre);
                 // Iterate over each element in the vector
@@ -225,7 +225,7 @@ int main()
                     if (tempVideo->GetNombre() == nombre)
                     {
                         tempVideo->Print();
-                        std::cout << "Agregar una nueva calificacion: ";
+                        std::cout << "Agregar una nueva calificacion: "<<std::endl;
                         std::cin >> calificacion;
                         tempVideo->SetCalificacion(calificacion);
                         std::cout << *tempVideo << std::endl;

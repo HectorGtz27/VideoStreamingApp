@@ -16,34 +16,33 @@ Video::Video(int id, std::string nombre, float duracion, std::string genero, flo
     this->genero = genero;
     this->calificacion = calificacion;
 }
-
+//Coloca las calificaciones en el vector
 void Video::setCalificacion(float calificacion) {
-    miVector.push_back(calificacion);
+    calificaciones.push_back(calificacion);
 }
 
-float Video::getPromedioCalificaciones() {
+//Obtiene el promedio de las calificaciones
+float Video::getCalificacion() {
     int suma = 0;
 
     // Iterar sobre el vector y sumar los valores
-    for (int num : miVector) {
+    for (int num : calificaciones) {
         suma += num;
     }
 
     // Calcular el promedio
-    float promedio = static_cast<float>(suma) / miVector.size();
+    float promedio = static_cast<float>(suma) / calificaciones.size();
 
     return promedio;
 }
 
-void Video::mostrarCatalogoVideo() {
-    std::cout << "ID: " << id;
-    std::cout << " Nombre: " << nombre;
-    std::cout << " Duracion: " << duracion;
-    std::cout << " Genero: " << genero;
-    std::cout << " Calificacion: " << calificacion;
-    std::cout << " Promedio de calificaciones: " << getPromedioCalificaciones() << std::endl;
+void Video::print(){
+    std::cout << "Id: " << id << std::endl;
+    std::cout << "Nombre: " << nombre << std::endl;
+    std::cout << "Duracion: " << duracion << std::endl;
+    std::cout << "Genero: " << genero << std::endl;
+    std::cout << "Calificacion: " << calificacion << std::endl;
 }
-
 void Video::outMsg(std::string msg) {
     fo << msg << std::endl;
 }
@@ -69,7 +68,7 @@ void Video::start() {
         switch (opcion) {
             case 1:
                 std::cout << "Ha seleccionado la Opción 1." << std::endl;
-                mostrarCatalogoVideo();
+                mostrarCalificaciones();
                 break;
             case 2:
                 std::cout << "Ha seleccionado la Opción 2." << std::endl;

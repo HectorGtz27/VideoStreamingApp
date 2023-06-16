@@ -5,13 +5,14 @@
         "Nombre": "How I Met your mother",
         "Temporadas": [
           {
+            "Id" : "6432",
             "Episodios": [
               {
                 "Nombre": "Pilot HMYM",
                 "Id": "2345",
                 "Genero": "Comedia",
                 "Duracion": "45",
-                "Calificacion": [
+                "Calificaciones": [
                   5,
                   5,
                   5,
@@ -24,7 +25,7 @@
                 "Id": "3456",
                 "Genero": "Comedia",
                 "Duracion": "47",
-                "Calificacion": [
+                "Calificaciones": [
                   4,
                   4,
                   4,
@@ -37,7 +38,7 @@
                 "Id": "8324",
                 "Genero": "Comedia",
                 "Duracion": "55",
-                "Calificacion": [
+                "Calificaciones": [
                   3,
                   3,
                   3,
@@ -48,13 +49,14 @@
             ]
           },
           {
+            "Id" : "8342",
             "Episodios": [
               {
                 "Nombre": "Episode 21",
                 "Id": "2345",
                 "Genero": "Comedia",
                 "Duracion": "45",
-                "Calificacion": [
+                "Calificaciones": [
                   5,
                   5,
                   5,
@@ -67,7 +69,7 @@
                 "Id": "75432",
                 "Genero": "Comedia",
                 "Duracion": "47",
-                "Calificacion": [
+                "Calificaciones": [
                   4,
                   4,
                   4,
@@ -80,7 +82,7 @@
                 "Id": "32456",
                 "Genero": "Romantico",
                 "Duracion": "55",
-                "Calificacion": [
+                "Calificaciones": [
                   3,
                   3,
                   3,
@@ -97,13 +99,14 @@
         "Nombre": "Friends",
         "Temporadas": [
           {
+            "Id" : "8324",
             "Episodios": [
               {
                 "Nombre": "Pilot Friends",
                 "Id": "9324",
                 "Genero": "Comedia",
                 "Duracion": "45",
-                "Calificacion": [
+                "Calificaciones": [
                   5,
                   5,
                   5,
@@ -116,7 +119,7 @@
                 "Id": "2341",
                 "Genero": "Comedia",
                 "Duracion": "47",
-                "Calificacion": [
+                "Calificaciones": [
                   4,
                   4,
                   4,
@@ -129,7 +132,7 @@
                 "Id": "23480",
                 "Genero": "Comedia",
                 "Duracion": "55",
-                "Calificacion": [
+                "Calificaciones": [
                   3,
                   3,
                   3,
@@ -148,7 +151,7 @@
         "Id": "0001",
         "Genero": "Accion",
         "Duracion": "150",
-        "Calificacion": [
+        "Calificaciones": [
           1,
           2,
           3,
@@ -161,7 +164,7 @@
         "Id": "9347",
         "Genero": "Accion",
         "Duracion": "140",
-        "Calificacion": [
+        "Calificaciones": [
           4,
           4,
           4,

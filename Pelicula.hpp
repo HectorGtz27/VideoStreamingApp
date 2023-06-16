@@ -11,5 +11,4 @@ class Pelicula : public Video {
         virtual ~Pelicula();
         void Print() override;
 
-
 };

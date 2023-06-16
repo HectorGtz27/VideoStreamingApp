@@ -1,14 +1,16 @@
 # pragma once 
 # include <iostream>
-# include <string>
 # include "Temporada.hpp"
+# include <vector>
+
 class Serie{
 	private:
-		int id;
+		std::string id;
+		std::vector<Temporada*> Temporadas;
 	public:
 		Serie();
-		Serie(int id, std::string);
-	    //std::vector<Temporada> *Temporadas;
-		std::vector<Temporada> Temporadas;
+		Serie(std::string id, std::string);
+		void AddTemporada(Temporada* temporada);
+	  std::vector<Temporada*> GetTemporadas();
 		std::string nombre;
 };

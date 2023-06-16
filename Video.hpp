@@ -20,8 +20,9 @@ public:
     float GetCalificacion();
     void MostrarCalificaciones();
     virtual void Print() = 0;
+    std::string GetNombre();
+    std::string GetGenero();
 
-   
 
 };
 

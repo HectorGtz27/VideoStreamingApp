@@ -5,13 +5,23 @@
 # include "Temporada.hpp"
 //hazme un constructor por defecto
 Serie::Serie(){
-		this->id = 0;
+		this->id = "";
 		this->nombre = "";
 }
 
 //creame el constructor por parámetros sin heredar de video
-Serie::Serie(int id, std::string nombre){
+Serie::Serie(std::string id, std::string nombre){
 		this->id = id;
 		this->nombre = nombre;
 }
+
+void Serie::AddTemporada(Temporada* temporada){
+		this->Temporadas.push_back(temporada);
+}
+
+std::vector<Temporada*> Serie::GetTemporadas(){
+		return this->Temporadas;
+}
+
+
 

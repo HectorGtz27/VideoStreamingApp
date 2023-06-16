@@ -36,6 +36,14 @@ float Video::GetCalificacion() {
     return promedio;
 }
 
+std::string Video::GetNombre() {
+ return this->nombre;
+}
+
+std::string Video::GetGenero() {
+ return this->genero;
+}
+
 void Video::MostrarCalificaciones(){
     std::cout << "Calificaciones: " << std::endl;
     for (int i = 0; i < calificaciones.size(); i++) {

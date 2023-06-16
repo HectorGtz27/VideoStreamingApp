@@ -23,6 +23,7 @@ public:
     std::string GetNombre();
     std::string GetGenero();
 
+     friend std::ostream& operator<<(std::ostream& os, const Video& video);
 
 };
 

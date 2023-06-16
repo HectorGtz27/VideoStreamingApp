@@ -21,28 +21,24 @@ using json = nlohmann::json;
 
 int main()
 {
-#define MAX_NAME_LEN 60
+    try {
+        std::ifstream ifs("/workspaces/vs-03/Videos.json");
+        json jf = json::parse(ifs);
 
-    std::ifstream ifs("/workspaces/vs-03/Videos.json");
-    json jf = json::parse(ifs);
+        // crear una list de peliculas inicialmente vacia
+        std::vector<Pelicula *> peliculas;
+        std::vector<Serie *> series;
 
-    // crear una list de peliculas inicialmente vacia
-    std::vector<Pelicula *> peliculas;
-    std::vector<Serie *> series;
-
-    for(auto& pelicula : jf["Peliculas"]){
-
-
-        std::vector<float> elementos;
-        for (auto& calificacion : pelicula["Calificaciones"]) {
-            elementos.push_back(calificacion);
+        for(auto& pelicula : jf["Peliculas"]){
+            std::vector<float> elementos;
+            for (auto& calificacion : pelicula["Calificaciones"]) {
+                elementos.push_back(calificacion);
+            }
+            Pelicula* tempPelicula = new Pelicula(pelicula["Id"], pelicula["Nombre"], pelicula["Duracion"], pelicula["Genero"], elementos);
+            peliculas.push_back(tempPelicula);
         }
-        Pelicula* tempPelicula = new Pelicula(pelicula["Id"], pelicula["Nombre"], pelicula["Duracion"], pelicula["Genero"], elementos);
-        peliculas.push_back(tempPelicula);
-    }
 
         for(auto& serie : jf["Series"]){
-
             std::string id = serie["Id"];
             std::string nombreSerie = serie["Nombre"];
             Serie *tempSerie = new Serie(id, nombreSerie);
@@ -264,6 +260,11 @@ int main()
         }
         }
     } while (opcion != 4);
+
+    } catch (const std::exception& e) {
+        std::cerr << "Error al procesar el archivo JSON: " << e.what() << std::endl;
+    }
+
 
     return 0;
 }

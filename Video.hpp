@@ -22,7 +22,7 @@ public:
 
     void setCalificacion(float calificacion);
     float getPromedioCalificaciones();
-    void mostrarVideo();
+    void mostrarCatalogoVideo();
     void outMsg(std::string);
     void start();
 };

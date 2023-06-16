@@ -35,7 +35,7 @@ float Video::getPromedioCalificaciones() {
     return promedio;
 }
 
-void Video::mostrarVideo() {
+void Video::mostrarCatalogoVideo() {
     std::cout << "ID: " << id;
     std::cout << " Nombre: " << nombre;
     std::cout << " Duracion: " << duracion;
@@ -59,8 +59,8 @@ void Video::start() {
         std::cout << "1. Mostrar catalogo: " << std::endl;
         std::cout << "2. Calificar Video: " << std::endl;
         std::cout << "3. Calificar Pelicula: " << std::endl;
-        std::cout << "4. Salir" << std::endl;
-        std::cout << "5. Calificar Episodio: " << std::endl;
+        std::cout << "4. Calificar Episodio: " << std::endl;
+        std::cout << "5. Salir " << std::endl;
 
         std::cout << "Seleccione una opción: ";
         std::cin >> opcion;
@@ -69,17 +69,25 @@ void Video::start() {
         switch (opcion) {
             case 1:
                 std::cout << "Ha seleccionado la Opción 1." << std::endl;
-                // Código para la opción 1
+                mostrarCatalogoVideo();
                 break;
             case 2:
                 std::cout << "Ha seleccionado la Opción 2." << std::endl;
-                // Código para la opción 2
+                std::cout << "Ingresa el Id del video: " << std::endl;
+                std::cin >> id;
+                std::cout << "Ingresa la calificacion del video: " << std::endl;
+                std::cin >> calificacion;
+                setCalificacion(calificacion);
                 break;
             case 3:
                 std::cout << "Ha seleccionado la Opción 3." << std::endl;
                 // Código para la opción 3
                 break;
-                        case 4:
+            case 4:
+                std::cout << "Ha seleccionado la Opción 4." << std::endl;
+                // Código para la opción 4
+                break;
+            case 5:
                 std::cout << "Has salido de YouUnity" << std::endl;
                 break;
             default:
@@ -88,7 +96,7 @@ void Video::start() {
         }
 
         std::cout << std::endl;
-    } while (opcion != 4);
+    } while (opcion != 5);
 }
 
 

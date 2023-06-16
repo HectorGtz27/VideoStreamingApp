@@ -11,6 +11,6 @@ class Serie{
 		Serie();
 		Serie(std::string id, std::string);
 		void AddTemporada(Temporada* temporada);
-	  std::vector<Temporada*> GetTemporadas();
+	  	std::vector<Temporada*> GetTemporadas();
 		std::string nombre;
 };

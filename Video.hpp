@@ -18,12 +18,12 @@ public:
 
     void SetCalificacion(float calificacion);
     float GetCalificacion();
-    void MostrarCalificaciones();
+    void MostrarCalificaciones() const;
     virtual void Print() = 0;
     std::string GetNombre();
     std::string GetGenero();
-
-     friend std::ostream& operator<<(std::ostream& os, const Video& video);
+    
+    friend std::ostream& operator<<(std::ostream& os, const Video& video);
 
 };
 

@@ -21,7 +21,9 @@ using json = nlohmann::json;
 
 int main()
 {
-    try {
+#define MAX_NAME_LEN 60
+
+       try {
         std::ifstream ifs("/workspaces/vs-03/Videos.json");
         json jf = json::parse(ifs);
 
@@ -43,7 +45,7 @@ int main()
             std::string nombreSerie = serie["Nombre"];
             Serie *tempSerie = new Serie(id, nombreSerie);
 
-            for(auto& temporada : serie["Temporada"]){
+            for(auto& temporada : serie["Temporadas"]){
                 std::string temporadaId = temporada["Id"];
                 Temporada *tempTemporada = new Temporada(temporadaId);
 
@@ -77,8 +79,9 @@ int main()
         std::cout << "4. Mostrar episodios de cierta serie con cierta calificación" << std::endl;
         std::cout << "5. Mostrar videos de cierto género" << std::endl;
         std::cout << "6. Ingresar el título del video para agregar una calificación" << std::endl;
+        std::cout << "7. Para salir del programa" << std::endl;
 
-        std::cout << "Seleccione una opción: ";
+        std::cout << "Seleccione una opción: "<<std::endl;
         std::cin >> opcion;
 
         std::string nombre;
@@ -86,185 +89,184 @@ int main()
         // Procesar la opción seleccionada
         switch (opcion)
         {
-        case 1:
-            std::cout << "Ha seleccionado la Opción 1." << std::endl;
-            // Código para la opción 1
-            // Iterate over each element in the vector
-            for (const auto &pelicula : peliculas)
-            {
-                pelicula->Print();
-                pelicula->MostrarCalificaciones();
-            }
-
-            for (const auto &serie : series)
-            {
-                for (auto temporada : serie->GetTemporadas())
-                {
-                    Temporada *tempTemporada = temporada;
-                    for (auto episodio : tempTemporada->GetEpisodios())
-                    {
-                        Episodio *tempEpisodio = episodio;
-                        tempEpisodio->Print();
-                        tempEpisodio->MostrarCalificaciones();
-                    }
-                }
-            }
-            break;
-        case 2:
-            std::cout << "Ha seleccionado la Opción 2." << std::endl;
-            // Código para la opción 1
-            std::cout << "Que video quieres buscar: ";
-            std::cin.ignore(); // Ignorar el carácter de nueva línea pendiente
-            std::getline(std::cin, nombre);
-            // Iterate over each element in the vector
-            for (const auto &pelicula : peliculas)
-            {
-                if (pelicula->GetNombre() == nombre)
+            case 1:
+                std::cout << "Ha seleccionado la Opción 1." << std::endl;
+                // Código para la opción 1
+                // Iterate over each element in the vector
+                for (const auto &pelicula : peliculas)
                 {
                     pelicula->Print();
-                    pelicula->MostrarCalificaciones();
+                    std::cout << *pelicula << std::endl;
                 }
-            }
 
-            for (const auto &serie : series)
-            {
-                for (auto temporada : serie->GetTemporadas())
-                {
-                    Temporada *tempTemporada = temporada;
-                    for (auto episodio : tempTemporada->GetEpisodios())
-                    {
-                        if (episodio->GetNombre() == nombre)
-                        {
-                            episodio->Print();
-                            episodio->MostrarCalificaciones();
-                        }
-                    }
-                }
-            }
-            break;
-        case 3:
-            std::cout << "Ha seleccionado la Opción 3." << std::endl;
-            for (const auto &pelicula : peliculas)
-            {
-                pelicula->Print();
-                pelicula->MostrarCalificaciones();
-            }
-            break;
-        case 4:
-            std::cout << "Ha seleccionado la Opción 4." << std::endl;
-            std::cout << "Que serie quieres buscar: ";
-            std::cin.ignore(); // Ignorar el carácter de nueva línea pendiente
-            std::getline(std::cin, nombre);
-            std::cout << "Con que calificacion de episodio quieres encontrar: ";
-            std::cin >> calificacion;
-            for (const auto &serie : series)
-            {
-                if (serie->nombre == nombre)
+                for (const auto &serie : series)
                 {
                     for (auto temporada : serie->GetTemporadas())
                     {
                         Temporada *tempTemporada = temporada;
                         for (auto episodio : tempTemporada->GetEpisodios())
                         {
-                            if (episodio->GetCalificacion() == calificacion)
+                            episodio->Print();
+                            std::cout << *episodio << std::endl;
+                        }
+                    }
+                }
+                break;
+            case 2:
+                std::cout << "Ha seleccionado la Opción 2." << std::endl;
+                // Código para la opción 1
+                std::cout << "Que video quieres buscar: ";
+                std::cin.ignore(); // Ignorar el carácter de nueva línea pendiente
+                std::getline(std::cin, nombre);
+                // Iterate over each element in the vector
+                for (const auto &pelicula : peliculas)
+                {
+                    if (pelicula->GetNombre() == nombre)
+                    {
+                        pelicula->Print();
+                        std::cout << *pelicula << std::endl;
+                    }
+                }
+
+                for (const auto &serie : series)
+                {
+                    for (auto temporada : serie->GetTemporadas())
+                    {
+                        Temporada *tempTemporada = temporada;
+                        for (auto episodio : tempTemporada->GetEpisodios())
+                        {
+                            if (episodio->GetNombre() == nombre)
                             {
                                 episodio->Print();
-                                episodio->MostrarCalificaciones();
+                                std::cout << *episodio << std::endl;
                             }
                         }
                     }
                 }
-            }
-            break;
-        case 5:
-            std::cout << "Ha seleccionado la Opción 5." << std::endl;
-            // Código para la opción 1
-            std::cout << "Que genero quieres buscar: ";
-            std::cin.ignore(); // Ignorar el carácter de nueva línea pendiente
-            std::getline(std::cin, nombre);
-            // Iterate over each element in the vector
-            for (const auto &pelicula : peliculas)
-            {
-                if (pelicula->GetGenero() == nombre)
+                break;
+            case 3:
+                std::cout << "Ha seleccionado la Opción 3." << std::endl;
+                for (const auto &pelicula : peliculas)
                 {
                     pelicula->Print();
-                    pelicula->MostrarCalificaciones();
+                    std::cout << *pelicula << std::endl;
                 }
-            }
-
-            for (const auto &serie : series)
-            {
-                for (auto temporada : serie->GetTemporadas())
+                break;
+            case 4:
+                std::cout << "Ha seleccionado la Opción 4." << std::endl;
+                std::cout << "Que serie quieres buscar: ";
+                std::cin.ignore(); // Ignorar el carácter de nueva línea pendiente
+                std::getline(std::cin, nombre);
+                std::cout << "Con que calificacion de episodio quieres encontrar: ";
+                std::cin >> calificacion;
+                std::cin.ignore(); // Consume the newline character
+                for (const auto &serie : series)
                 {
-                    Temporada *tempTemporada = temporada;
-                    for (auto episodio : tempTemporada->GetEpisodios())
+                    if (serie->nombre == nombre)
                     {
-                        if (episodio->GetGenero() == nombre)
+                        for (auto temporada : serie->GetTemporadas())
                         {
-                            episodio->Print();
-                            episodio->MostrarCalificaciones();
+                            Temporada *tempTemporada = temporada;
+                            for (auto episodio : tempTemporada->GetEpisodios())
+                            {
+                                if (episodio->GetCalificacion() == calificacion)
+                                {
+                                    episodio->Print();
+                                    std::cout << *episodio << std::endl;
+                                }
+                            }
                         }
                     }
                 }
-            }
-            break;
-        case 6:
-            std::cout << "Ha seleccionado la Opción 6." << std::endl;
-            // Código para la opción 1
-            std::cout << "Que video quieres calificar: ";
-            std::cin.ignore(); // Ignorar el carácter de nueva línea pendiente
-            std::getline(std::cin, nombre);
-            // Iterate over each element in the vector
-            for (const auto &pelicula : peliculas)
-            {
-
-                Video *tempVideo = pelicula;
-                if (tempVideo->GetNombre() == nombre)
+                break;
+            case 5:
+                std::cout << "Ha seleccionado la Opción 5." << std::endl;
+                // Código para la opción 1
+                std::cout << "Que genero quieres buscar: ";
+                std::cin.ignore(); // Ignorar el carácter de nueva línea pendiente
+                std::getline(std::cin, nombre);
+                // Iterate over each element in the vector
+                for (const auto &pelicula : peliculas)
                 {
-                    tempVideo->Print();
-                    std::cout << "Agregar una nueva calificacion: ";
-                    std::cin >> calificacion;
-                    tempVideo->SetCalificacion(calificacion);
-                    std::cout << "Nuevo Promedio de la pelicula es: ";
-                    tempVideo->MostrarCalificaciones();
-                     std::cout << tempVideo->GetCalificacion() << std::endl;
-                }
-            }
-
-            for (const auto &serie : series)
-            {
-                for (auto temporada : serie->GetTemporadas())
-                {
-                    Temporada *tempTemporada = temporada;
-                    for (auto episodio : tempTemporada->GetEpisodios())
+                    if (pelicula->GetGenero() == nombre)
                     {
-                        Video *tempVideo = episodio;
-                        if (tempVideo->GetNombre() == nombre)
+                        pelicula->Print();
+                        std::cout << *pelicula << std::endl; 
+                    }
+                }
+
+                for (const auto &serie : series)
+                {
+                    for (auto temporada : serie->GetTemporadas())
+                    {
+                        Temporada *tempTemporada = temporada;
+                        for (auto episodio : tempTemporada->GetEpisodios())
                         {
-                            tempVideo->Print();
-                            std::cout << "Agregar una nueva calificacion: ";
-                            std::cin >> calificacion;
-                            tempVideo->SetCalificacion(calificacion);
-                            std::cout << "Nuevo Promedio de la pelicula es: ";
-                            tempVideo->MostrarCalificaciones();
-                            std::cout << tempVideo->GetCalificacion() << std::endl;
+                            if (episodio->GetGenero() == nombre)
+                            {
+                                episodio->Print();
+                                std::cout << *episodio << std::endl; 
+                            }
                         }
                     }
                 }
-            }
-            break;
-        default:
-        {
-            std::cout << "Opción inválida. Intente nuevamente." << std::endl;
-            break;
-        }
-        }
-    } while (opcion != 4);
+                break;
+            case 6:
+                std::cout << "Ha seleccionado la Opción 6." << std::endl;
+                // Código para la opción 1
+                std::cout << "Que video quieres calificar: ";
+                std::cin.ignore(); // Ignorar el carácter de nueva línea pendiente
+                std::getline(std::cin, nombre);
+                // Iterate over each element in the vector
+                for (const auto &pelicula : peliculas)
+                {
 
-    } catch (const std::exception& e) {
-        std::cerr << "Error al procesar el archivo JSON: " << e.what() << std::endl;
+                    Video *tempVideo = pelicula;
+                    if (tempVideo->GetNombre() == nombre)
+                    {
+                        tempVideo->Print();
+                        std::cout << "Agregar una nueva calificacion: ";
+                        std::cin >> calificacion;
+                        tempVideo->SetCalificacion(calificacion);
+                        std::cout << *tempVideo << std::endl;
+                         std::cout << "Nuevo Promedio de la pelicula es: "<<endl;   
+                        std::cout << tempVideo->GetCalificacion() << std::endl;
+                    }
+                }
+
+                for (const auto &serie : series)
+                {
+                    for (auto temporada : serie->GetTemporadas())
+                    {
+                        Temporada *tempTemporada = temporada;
+                        for (auto episodio : tempTemporada->GetEpisodios())
+                        {
+                            Video *tempVideo = episodio;
+                            if (tempVideo->GetNombre() == nombre)
+                            {
+                                tempVideo->Print();
+                                std::cout << "Agregar una nueva calificacion: ";
+                                std::cin >> calificacion;
+                                tempVideo->SetCalificacion(calificacion);
+                                std::cout << *tempVideo << std::endl;   
+                                std::cout << "Nuevo Promedio de la pelicula es: "<<std::endl;
+                                std::cout << tempVideo->GetCalificacion() << std::endl;
+                            }
+                        }
+                    }
+                }
+                break;
+            default:
+            {
+                std::cout << "Opción inválida. Intente nuevamente." << std::endl;
+                break;
+            }
+        }
+    } while (opcion != 7);
+
+     } catch (const std::exception& e) {
+        std::cerr << "Hubo un error en el sistema favor de reiniciar: " << e.what() << std::endl;
     }
-
 
     return 0;
 }

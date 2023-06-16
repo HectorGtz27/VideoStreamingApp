@@ -53,28 +53,33 @@ classDiagram
       Video <|-- Pelicula
       Video <|-- Serie
       Serie --> Temporada
+      Video <|-- Episodio
       Temporada --> Episodio
-
 
       Video: - id int 
       Video: - nombre string
       Video: - duracion float
       Video: - genero string
-      Video: - calificacion float 
+      Video: - calificacion float
+      Video: - calificaciones vector<float> 
       Video: - ifstream fi{"input"}
       Video: - ofstream fo{"output"}
 
       Video: + Video()
       Video: + Video(id int, nombre string, duracion float, genero string, calificacion float )
-      Video: + mostrarVideo(nombre string, id int) void
-      Video: + setCalificacion(nombre string, califiacion float) void
+
+      Video: + setCalificacion(Video v, califiacion float) void
+      Video: + getPromedioCalifiaciones(calificaciones vector<float> ) float
+      
+
+      Video: + mostrarVideo(Video v) void
       Video: + outMsg(string)
       Video: + start()
 
       Pelicula: + Pelicula()
       Pelicula: + Pelicula(id int, nombre string, duracion float, genero string, calificacion float)
-      Pelicula: + mostrarPelicula(id int, nombre string)
-
+      Pelicula: + mostrarPelicula(Pelicula p)
+     
       Serie: + Serie()
       Serie: + Serie(id int, nombre string, duracion float, genero string, calificacion float)
 
@@ -82,11 +87,9 @@ classDiagram
       Temporada: + Temporada()
       Temporada: + Temporada(numero int)
 
-      Episodio: - titulo string
-      Episodio: - calificacionEpisodio float
       Episodio: + Episodio()
       Episodio: + Episodio(titulo string)
-      Episodio: + mostrarEpisodio(titulo string )
+      Episodio: + mostrarEpisodio(Episodio e)
 
 ```
 Puedes apoyarte con el editor [Mermaid-live](https://mermaid.live/).

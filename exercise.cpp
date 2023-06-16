@@ -72,6 +72,7 @@ int main()
     do
     {
         // Mostrar el menú
+        std::cout << "Bienvenido a YouUnit" << std::endl;
         std::cout << "Menu:" << std::endl;
         std::cout << "1. Mostrar sus videos con sus calificaciones" << std::endl;
         std::cout << "2. Buscar video por nombre" << std::endl;
@@ -229,7 +230,7 @@ int main()
                         std::cin >> calificacion;
                         tempVideo->SetCalificacion(calificacion);
                         std::cout << *tempVideo << std::endl;
-                         std::cout << "Nuevo Promedio de la pelicula es: "<<endl;   
+                         std::cout << "Nuevo Promedio de la pelicula es: "<<std::endl;   
                         std::cout << tempVideo->GetCalificacion() << std::endl;
                     }
                 }
@@ -256,6 +257,10 @@ int main()
                     }
                 }
                 break;
+                case 7:
+                std::cout << "Gracias por utilizar YouUnite, saliendo de la pagina..." << std::endl;
+                break;
+
             default:
             {
                 std::cout << "Opción inválida. Intente nuevamente." << std::endl;

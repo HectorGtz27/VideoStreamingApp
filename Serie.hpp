@@ -9,6 +9,6 @@ class Serie{
 
 	public:
 		Serie();
-		Serie(int. std::string, float, std::string, float);
+		Serie(int id, std::string);
 
-}
+};

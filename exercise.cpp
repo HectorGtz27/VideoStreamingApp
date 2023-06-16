@@ -32,17 +32,13 @@ int main()
 
     for(auto& pelicula : jf["Peliculas"]){
 
-            std::string calificaciones = pelicula["Calificaciones"];
-            std::vector<float> elementos;
-            std::stringstream ss(calificaciones);
-            std::string elemento;
 
-            while (std::getline(ss, elemento, ',')) {
-                elementos.push_back(std::stof(elemento));
-            }
-
-            Pelicula *tempPelicula = new Pelicula(pelicula["Id"],  pelicula["Nombre"], pelicula["Duracion"], pelicula["Genero"], elementos);
-            peliculas.push_back(tempPelicula);
+        std::vector<float> elementos;
+        for (auto& calificacion : pelicula["Calificaciones"]) {
+            elementos.push_back(calificacion);
+        }
+        Pelicula* tempPelicula = new Pelicula(pelicula["Id"], pelicula["Nombre"], pelicula["Duracion"], pelicula["Genero"], elementos);
+        peliculas.push_back(tempPelicula);
     }
 
         for(auto& serie : jf["Series"]){
@@ -56,13 +52,9 @@ int main()
                 Temporada *tempTemporada = new Temporada(temporadaId);
 
                 for(auto& episodio : temporada["Episodios"]){
-                    std::string calificaciones = episodio["Calificaciones"];
                     std::vector<float> elementos;
-                    std::stringstream ss(calificaciones);
-                    std::string elemento;
-
-                    while (std::getline(ss, elemento, ',')) {
-                        elementos.push_back(std::stof(elemento));
+                    for (auto& calificacion : episodio["Calificaciones"]) {
+                        elementos.push_back(calificacion);
                     }
 
                     Episodio *tempEpisodio = new Episodio(episodio["Id"], episodio["Nombre"], episodio["Duracion"], episodio["Genero"], elementos);

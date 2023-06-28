@@ -1,51 +1,51 @@
 # Situation Problem - Video Streaming App
 
-## Modelado de servicio de streaming
-En los últimos años, han proliferado los servicios de streaming de video bajo demanda por ejemplo Netflix, Disney, DC entre otros. Algunos de ellos se especializan por el volumen de videos que proporcionan a sus usuarios mientras que otros se han puesto el reto de mostrar solamente videos de su propia marca. Una versión limitada para apoyar a un futuro proveedor de este tipo de servicios es la que se describe a continuación:
+## Streaming service modeling
+In recent years, video-on-demand streaming services have proliferated, such as Netflix, Disney, DC, among others. Some of them specialize in the volume of videos they provide to their users while others have challenged themselves to only show videos of their own brand. A limited version to support a future provider of this type of service is described below:
 
-Se quiere trabajar con dos tipos de videos: películas y series. Todo video tiene un ID, un nombre, una duración y un género (drama, acción, misterio).
+You want to work with two types of videos: movies and series. Every video has an ID, a name, a duration and a genre (drama, action, mystery).
 
-Las series tienen episodios y cada episodio tiene un título y temporada a la que pertenece.
+The series have episodes and each episode has a title and season to which it belongs.
 
-Nos interesa conocer la calificación promedio que ha recibido cada uno de los videos. Esta califiación está en escala de 1 a 5 donde 5 es la mejor calificación.
+We are interested in knowing the average rating that each of the videos has received. This rating is on a scale of 1 to 5 where 5 is the best rating.
 
-El sistema debe ser capaz de :
+The system must be able to:
 
-- Mostrar los videos en general con sus calificaciones
-- Mostrar los episodios de una determinada serie con sus calificaciones
-- Mostrar las películas con sus calificaciones
+- Show the videos in general with their ratings
+- Show the episodes of a certain series with their ratings
+- Show movies with their ratings
 
-¿Cuál sería el Diagrama de clases que representaría la situación planteada?
+What would be the class diagram that would represent the situation posed?
 
-¿Cómo emplearías los conceptos de Programación Orientada a Objetos tales como herencia, polimorfismo y sobrecarga de operadores para construir el sistema de clases que facilitaría la solución de la situación problema?
+How would you use Object Oriented Programming concepts such as inheritance, polymorphism, and operator overloading to build the class system that would facilitate solving the problem situation?
 
-¿Podrías construir una aplicación que tome la información sobre los diferentes tipos de videos y genere reportes como: películas de un cierto género, series de un cierto género, películas con su calificación ?
+Could you build an application that takes information about the different types of videos and generates reports such as: movies of a certain genre, series of a certain genre, movies with their rating?
 
-# ¿Qué tengo que hacer?
-Para el logro de la actividad, se deben realizar las siguientes acciones :
+# What do I have to do?
+To achieve the activity, the following actions must be carried out:
 
-- Leer la situación problema.
-- Identificar los objetos involucrados y definir para cada uno de ellos sus características y comportamientos.
-- Diseñar un modelo de clases que de solución a la situación problema. Verificar que el modelo emplee los mecanismos de Herencia y Polimorfismo.
-- Elaborar el Diagrama UML que represente el diseño de la solución.
-- Construir diseño de clases propuesto en el lenguaje de programación. Asegurar que el sistema de clases construido funciona correctamente haciendo un programa de aplicación para ese fin.
-- Diseñar y elaborar una aplicación que emplee el sistema de clases construido para dar solución a la situación problema.
+- Read the problem situation.
+- Identify the objects involved and define their characteristics and behaviors for each of them.
+- Design a class model that provides a solution to the problem situation. Verify that the model uses the mechanisms of Inheritance and Polymorphism.
+- Prepare the UML Diagram that represents the design of the solution.
+- Build class design proposed in the programming language. Ensure that the built class system works correctly by making an application program for that purpose.
+- Design and develop an application that uses the built class system to solve the problem situation.
 
 
-La aplicación debe mostrar el siguiente menu ciclado:
-1. Cargar archivo de datos
-2. Mostrar los videos en general con una cierta calificación o de un cierto género
-3. Mostrar los episodios de una determinada serie con una calificacion determinada
-4. Mostrar las películas con cierta calificacion
-5. Calificar un video
-pedir titulo a calificar
-pedir valor otorgado
-0. Salir
-El sistema debe validar todas las entradas dadas por el usuario.
+The application should display the following looped menu:
+1. Load data file
+2. Show the videos in general with a certain rating or of a certain genre
+3. Show the episodes of a certain series with a certain rating
+4. Show movies with a certain rating
+5. Rate a video
+request title to qualify
+ask for value granted
+0.exit
+The system must validate all inputs given by the user.
 
-## Diagrama de Clases
+## UML Diagram
 
-Construye aquí el Diagrama de Clases de tu solución, usando el [Lenguaje Mermaid](https://mermaid.js.org/syntax/classDiagram.html).
+I create my Class Diagram for my solution here, using [Lenguaje Mermaid](https://mermaid.js.org/syntax/classDiagram.html).
 
 ```mermaid
 classDiagram
@@ -102,7 +102,7 @@ classDiagram
 	Temporada: + vector<Episodio*> GetEpisodios()
 	Temporada: + string GetId()
 ```
-Puedes apoyarte con el editor [Mermaid-live](https://mermaid.live/).
+This editor can also help you [Mermaid-live](https://mermaid.live/).
 
 # Diagrama de clases UML con draw.io
 El repositorio está configurado para crear Diagramas de clases UML con ```draw.io```. Para usarlo simplemente agrega un archivo con extensión ```.drawio.png```, das doble clic sobre el mismo y se activará el editor ```draw.io``` incrustado en ```VSCode``` para edición. Asegúrate de agregar las formas UML en el menú de formas del lado izquierdo (opción ```+Más formas```).
